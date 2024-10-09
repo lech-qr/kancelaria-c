@@ -1,0 +1,143 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@gold: #ac9573;
+@blue_d: #102438;
+@blue_l: #1A3B5C;
+
+body {
+    background-color: #ccc;
+    font-family: "Libre Baskerville", serif;
+
+    header {
+        transition: .5s;
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            #main-logo {
+                display: flex;
+                flex-direction: row;
+                padding: .4rem 0;
+                height: 5rem;
+
+                .signet {
+                    display: block;
+                    aspect-ratio: 34 / 33;
+                    background-color: white;
+                    -webkit-mask: url('../../images/signet.svg') no-repeat center;
+                    mask: url('../../images/signet.svg') no-repeat center;
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                    margin-right: .3rem;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        display: block;
+                        width: 100%;
+                        background-color: white;
+
+                        &:nth-of-type(1) {
+                            height: 45.71428%;
+                            aspect-ratio: 329 / 30;
+                            -webkit-mask: url('../../images/name_1.svg') no-repeat center;
+                            mask: url('../../images/name_1.svg') no-repeat center;
+                            -webkit-mask-size: contain;
+                            mask-size: contain;
+                        }
+
+                        &:nth-of-type(2) {
+                            height: 11.42857%;
+                            aspect-ratio: 658 / 15;
+                            -webkit-mask: url('../../images/name_2.svg') no-repeat center;
+                            mask: url('../../images/name_2.svg') no-repeat center;
+                            -webkit-mask-size: contain;
+                            mask-size: contain;
+                        }
+
+                        &:nth-of-type(3) {
+                            height: 42.85714%;
+                            aspect-ratio: 658 / 57;
+                            -webkit-mask: url('../../images/name_3.svg') no-repeat center;
+                            mask: url('../../images/name_3.svg') no-repeat center;
+                            -webkit-mask-size: contain;
+                            mask-size: contain;
+                        }
+                    }
+                }
+            }
+
+            nav {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+
+                        a {
+                            color: #fff;
+                            text-decoration: none;
+                            font-size: .9rem;
+                            padding: 1rem .9rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            background-color: #fff;
+            transition: .4s;
+
+            .container {
+                #main-logo {
+                    .signet {
+                        background-color: @gold;
+                    }
+
+                    ul {
+                        li {
+
+                            &:nth-of-type(1),
+                            &:nth-of-type(3) {
+                                background-color: @blue_d;
+                            }
+
+                            &:nth-of-type(2) {
+                                background-color: @gold;
+                            }
+                        }
+                    }
+                }
+
+                nav {
+                    ul {
+                        li {
+                            a {
+                                color: #000;
+                            }
+
+                            &:last-of-type {
+                                a {
+                                    color: #0e76a8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
