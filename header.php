@@ -12,10 +12,13 @@
  <body <?php body_class(); ?>>
     <header>
         <div class="container">
-            <a href="<?php echo get_site_url(); ?>"id="main-logo">
+            <a href="<?php echo get_site_url(); ?>" class="logo" id="main-logo">
                 <span class="signet"></span>
                 <ul><li></li><li></li><li></li></ul>
             </a>
+            <div id="icon-menu" class="d-md-none">
+                <span></span><span></span><span></span><span></span>
+            </div>
             <nav>
                 <?php wp_nav_menu( array( 'header-menu' => 'header-menu', 'container' => false, ) ); ?>
             </nav>

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<main class="wrap">
+<main class="wrap container">
   <section class="content-area content-thin">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <article class="article-loop">
+      <article class="row article-loop">
 
           <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
           By: <?php the_author(); ?>

@@ -1,84 +1,208 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+﻿@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
 
 @gold: #ac9573;
 @blue_d: #102438;
 @blue_l: #1A3B5C;
+@border: #dee2e6;
 
 body {
-    background-color: #ccc;
-    font-family: "Libre Baskerville", serif;
+    font-family: "Roboto", sans-serif;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .headline,
+    nav ul li a {
+        font-family: "Libre Baskerville", serif;
+    }
+
+    p,
+    ul li {
+        font-weight: 300;
+    }
+
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        aspect-ratio: 4 / .65;
+
+        .signet {
+            display: block;
+            aspect-ratio: 34 / 33;
+            -webkit-mask: url('../../images/signet.svg') no-repeat center;
+            mask: url('../../images/signet.svg') no-repeat center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+        }
+
+        ul {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: block;
+                width: 100%;
+
+                &:nth-of-type(1) {
+                    height: 45.71428%;
+                    aspect-ratio: 329 / 30;
+                    -webkit-mask: url('../../images/name_1.svg') no-repeat center;
+                    mask: url('../../images/name_1.svg') no-repeat center;
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                }
+
+                &:nth-of-type(2) {
+                    height: 11.42857%;
+                    aspect-ratio: 658 / 15;
+                    -webkit-mask: url('../../images/name_2.svg') no-repeat center;
+                    mask: url('../../images/name_2.svg') no-repeat center;
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                }
+
+                &:nth-of-type(3) {
+                    height: 42.85714%;
+                    aspect-ratio: 658 / 57;
+                    -webkit-mask: url('../../images/name_3.svg') no-repeat center;
+                    mask: url('../../images/name_3.svg') no-repeat center;
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                }
+            }
+        }
+    }
 
     header {
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        border-bottom: 1px solid @border;
+        padding: 3vw 0;
         transition: .5s;
+
+        &.show {
+            position: fixed;
+            background-color: #fff;
+            transition: .5s;
+
+            .container {
+                nav {
+                    display: flex;
+                    height: auto;
+                }
+            }
+        }
 
         .container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+            flex-wrap: wrap;
 
             #main-logo {
-                display: flex;
-                flex-direction: row;
-                padding: .4rem 0;
-                height: 5rem;
+                width: 85%;
 
                 .signet {
-                    display: block;
-                    aspect-ratio: 34 / 33;
-                    background-color: white;
-                    -webkit-mask: url('../../images/signet.svg') no-repeat center;
-                    mask: url('../../images/signet.svg') no-repeat center;
-                    -webkit-mask-size: contain;
-                    mask-size: contain;
+                    background-color: @gold;
                     margin-right: .3rem;
                 }
 
                 ul {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-
                     li {
-                        display: block;
-                        width: 100%;
-                        background-color: white;
 
-                        &:nth-of-type(1) {
-                            height: 45.71428%;
-                            aspect-ratio: 329 / 30;
-                            -webkit-mask: url('../../images/name_1.svg') no-repeat center;
-                            mask: url('../../images/name_1.svg') no-repeat center;
-                            -webkit-mask-size: contain;
-                            mask-size: contain;
+                        &:nth-of-type(1),
+                        &:nth-of-type(3) {
+                            background-color: @blue_d;
                         }
 
                         &:nth-of-type(2) {
-                            height: 11.42857%;
-                            aspect-ratio: 658 / 15;
-                            -webkit-mask: url('../../images/name_2.svg') no-repeat center;
-                            mask: url('../../images/name_2.svg') no-repeat center;
-                            -webkit-mask-size: contain;
-                            mask-size: contain;
-                        }
-
-                        &:nth-of-type(3) {
-                            height: 42.85714%;
-                            aspect-ratio: 658 / 57;
-                            -webkit-mask: url('../../images/name_3.svg') no-repeat center;
-                            mask: url('../../images/name_3.svg') no-repeat center;
-                            -webkit-mask-size: contain;
-                            mask-size: contain;
+                            background-color: @gold;
                         }
                     }
                 }
             }
 
+            #icon-menu {
+                width: 10%;
+                position: relative;
+                margin-top: 3%;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    left: 0;
+                    background-color: @blue_d;
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+
+                    -webkit-transition: .25s ease-in-out;
+                    -moz-transition: .25s ease-in-out;
+                    -o-transition: .25s ease-in-out;
+                    transition: .25s ease-in-out;
+
+                    &:nth-child(1) {
+                        top: 0;
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        top: 12px;
+                    }
+
+                    &:nth-child(4) {
+                        top: 24px;
+                    }
+                }
+
+                &.open span {
+                    &:nth-child(1) {
+                        top: 12px;
+                        width: 0;
+                        left: 50%;
+                    }
+
+                    &:nth-child(2) {
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+
+                    &:nth-child(3) {
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                    }
+
+                    &:nth-child(4) {
+                        top: 12px;
+                        width: 0;
+                        left: 50%;
+                    }
+                }
+            }
+
             nav {
+                display: none;
+                height: 0;
+                width: 100%;
+
                 ul {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     list-style: none;
                     margin: 0;
                     padding: 0;
@@ -86,38 +210,98 @@ body {
                     li {
 
                         a {
-                            color: #fff;
+                            display: block;
+                            color: #000;
                             text-decoration: none;
-                            font-size: .9rem;
-                            padding: 1rem .9rem;
+                            font-size: 1rem;
+                            padding: 1.25rem 0;
+                        }
+
+                        &:last-of-type {
+                            a {
+                                color: #0e76a8; // LinkedIn
+                            }
                         }
                     }
                 }
             }
         }
+    }
 
-        &:hover {
-            background-color: #fff;
-            transition: .4s;
+    &.home {
+        position: relative;
+
+        header {
+            position: absolute;
+            z-index: 2;
+            width: 100vw;
+            max-width: 100%;
+            border-bottom: 1px solid transparent;
+
+            &.show {
+                background-color: #fff;
+
+                .container {
+                    #icon-menu {
+                        span {
+                            background-color: @blue_d;
+                        }
+                    }
+
+                    #main-logo {
+                        .signet {
+                            background-color: @gold;
+                        }
+
+                        ul {
+                            li {
+
+                                &:nth-of-type(1),
+                                &:nth-of-type(3) {
+                                    background-color: @blue_d;
+                                }
+
+                                &:nth-of-type(2) {
+                                    background-color: @gold;
+                                }
+                            }
+                        }
+                    }
+
+                    nav {
+                        ul {
+                            li {
+                                a {
+                                    color: #000;
+                                }
+
+                                &:last-of-type {
+                                    a {
+                                        color: #0e76a8; // LinkedIn
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             .container {
                 #main-logo {
                     .signet {
-                        background-color: @gold;
+                        background-color: white;
                     }
 
                     ul {
                         li {
-
-                            &:nth-of-type(1),
-                            &:nth-of-type(3) {
-                                background-color: @blue_d;
-                            }
-
-                            &:nth-of-type(2) {
-                                background-color: @gold;
-                            }
+                            background-color: white;
                         }
+                    }
+                }
+
+                #icon-menu {
+                    span {
+                        background-color: #fff;
                     }
                 }
 
@@ -125,17 +309,146 @@ body {
                     ul {
                         li {
                             a {
-                                color: #000;
-                            }
-
-                            &:last-of-type {
-                                a {
-                                    color: #0e76a8;
-                                }
+                                color: #fff;
                             }
                         }
                     }
                 }
+            }
+        }
+
+        #carousel_mp {
+
+            img,
+            video {
+                width: 100%;
+                height: 70vh;
+                object-fit: cover;
+            }
+
+            .carousel-inner {
+                .carousel-item {
+                    position: relative;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        display: block;
+                        background-color: fade(@blue_l, 70%);
+                        width: 100%;
+                        height: 70vh;
+                    }
+
+                    .carousel-caption {
+                        bottom: 40%;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        article {
+            flex-direction: column-reverse;
+
+            img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1.618 / 1;
+                object-fit: cover;
+                margin-bottom: 2rem;
+
+            }
+        }
+    }
+
+    main {
+        article {
+            padding: 4rem 0;
+
+            .card {
+                margin-bottom: 2rem;
+                --bs-card-border-color: @border;
+
+                img.card-img-top {
+                    height: auto;
+                    aspect-ratio: 1.618 / 1;
+                    object-fit: cover;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .map {
+        height: 33vh;
+        margin: 0 0 -5px 0;
+    }
+
+    footer {
+        @footer-gap: 2rem;
+
+        section:nth-of-type(1) {
+            background-color: @blue_l;
+            color: #fff;
+            margin: 0;
+
+            #footer-logo {
+                margin: @footer-gap 0 0 0;
+                height: 3.6rem;
+
+                .signet {
+                    background-color: white;
+                    margin-right: .3rem;
+                }
+
+                ul {
+                    li {
+                        background-color: white;
+                    }
+                }
+            }
+
+            div:nth-of-type(2),
+            div:nth-of-type(3) {
+                padding-top: @footer-gap;
+                padding-bottom: @footer-gap;
+            }
+
+            div:nth-of-type(3) {
+                p:first-of-type {
+                    margin: 0 0 2rem 0;
+                }
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        section:nth-of-type(2) {
+            background-color: @blue_d;
+            color: #fff;
+            font-size: .8rem;
+            text-align: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+
+            p {
+                margin: 0;
             }
 
         }
