@@ -205,7 +205,7 @@ body {
                     flex-direction: column;
                     list-style: none;
                     margin: 0;
-                    padding: 0;
+                    padding: 3vw 0 0 0;
 
                     li {
 
@@ -354,7 +354,7 @@ body {
             img {
                 width: 100%;
                 height: auto;
-                aspect-ratio: 1.618 / 1;
+                // aspect-ratio: 1.618 / 1;
                 object-fit: cover;
                 margin-bottom: 2rem;
 
@@ -366,19 +366,45 @@ body {
         article {
             padding: 4rem 0;
 
+            h2 {
+                border-bottom: 1px solid @border;
+                padding-bottom: .4rem;
+                margin-bottom: 3rem;
+            }
+
             .card {
                 margin-bottom: 2rem;
                 --bs-card-border-color: @border;
 
                 img.card-img-top {
                     height: auto;
-                    aspect-ratio: 1.618 / 1;
+                    // aspect-ratio: 1.618 / 1;
                     object-fit: cover;
                 }
 
                 a {
                     text-decoration: none;
                     color: #000;
+                }
+            }
+
+            nav.pagina {
+                margin-bottom: 3rem;
+
+                ul.pagination {
+                    li .page-link {
+                        color: #000;
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+
+                    li.active>.page-link {
+                        background-color: #babbbc;
+                        border: solid 1px #dee2e6;
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -413,15 +439,19 @@ body {
                 }
             }
 
+            div:nth-of-type(1) {
+                p {
+                    margin: 1rem 0;
+                }
+            }
+
             div:nth-of-type(2),
             div:nth-of-type(3) {
                 padding-top: @footer-gap;
                 padding-bottom: @footer-gap;
-            }
 
-            div:nth-of-type(3) {
-                p:first-of-type {
-                    margin: 0 0 2rem 0;
+                a {
+                    font-weight: 300;
                 }
             }
 

@@ -16,8 +16,17 @@
 
 // md Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    body header .container #icon-menu {
+        width: 6%;
+    }
+}
+
+// lg Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
     body {
         .logo {
+            aspect-ratio: 5 / .99;
+
             ul {
                 width: auto;
             }
@@ -34,8 +43,8 @@
 
                 #main-logo {
                     padding: .4rem 0;
-                    height: 5rem;
-                    width: auto;
+                    height: auto;
+                    width: 40%;
                 }
 
                 nav {
@@ -45,6 +54,7 @@
 
                     ul {
                         flex-direction: row;
+                        padding: 0;
 
                         li {
                             a {
@@ -145,17 +155,17 @@
 
                 img,
                 video {
-                    height: 80vh;
+                    height: 60vh;
                 }
 
                 .carousel-inner {
                     .carousel-item {
                         &:before {
-                            height: 80vh;
+                            height: 60vh;
                         }
 
                         .carousel-caption {
-                            bottom: 30%;
+                            bottom: 40%;
 
                             h5 {
                                 font-size: 3rem;
@@ -176,6 +186,12 @@
 
         footer {
             section:nth-of-type(1) {
+                #footer-logo {
+                    max-height: 4vw;
+                    width: 100%;
+                    aspect-ratio: 6 / 1;
+                }
+
                 div:nth-of-type(2) {
                     border-left: 1px solid #dee2e6;
                     border-right: 1px solid #dee2e6;
@@ -184,11 +200,6 @@
         }
 
     }
-}
-
-// lg Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    // ...
 }
 
 // xl X-Large devices (large desktops, 1200px and up)

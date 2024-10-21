@@ -8,6 +8,12 @@
         $(this).toggleClass("open");
         if (tmpMenu == 0) {
             $('body header').addClass('show');
+            // Kontakt
+            $('#menu-item-37').click(function () {
+                $('body header').removeClass('show');
+                $('#icon-menu').removeClass("open");
+                tmpMenu = 0;
+            });
             if (!$('body').hasClass('home')) {
                 $('main').css('margin-top', header_h);
             }

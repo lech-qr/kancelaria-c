@@ -39,3 +39,11 @@ function add_Main_Nav() {
 
 // Włączenie obsługi zdjęć wprowadzających (featured images)
 add_theme_support('post-thumbnails');
+
+// SVG
+// function enable_svg_upload( $upload_mimes ) {
+//    $upload_mimes['svg'] = 'image/svg+xml';
+//    $upload_mimes['svgz'] = 'image/svg+xml';
+//    return $upload_mimes;
+// }
+// add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );

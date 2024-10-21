@@ -16,7 +16,7 @@
                 <span class="signet"></span>
                 <ul><li></li><li></li><li></li></ul>
             </a>
-            <div id="icon-menu" class="d-md-none">
+            <div id="icon-menu" class="d-lg-none">
                 <span></span><span></span><span></span><span></span>
             </div>
             <nav>
