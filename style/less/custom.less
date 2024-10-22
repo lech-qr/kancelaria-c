@@ -48,7 +48,7 @@ body {
 
             li {
                 display: block;
-                width: 100%;
+                width: auto;
 
                 &:nth-of-type(1) {
                     height: 45.71428%;
@@ -203,6 +203,7 @@ body {
                 ul {
                     display: flex;
                     flex-direction: column;
+                    width: 100%;
                     list-style: none;
                     margin: 0;
                     padding: 3vw 0 0 0;
@@ -370,6 +371,13 @@ body {
                 border-bottom: 1px solid @border;
                 padding-bottom: .4rem;
                 margin-bottom: 3rem;
+            }
+
+            .text-end {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
 
             .card {
