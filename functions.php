@@ -10,6 +10,7 @@ add_action('wp_enqueue_scripts', 'add_CSS');
 // Scripts
 function add_JS() {
    wp_enqueue_script( 'jquery_', get_template_directory_uri() . "/js/jquery-3.7.1.min.js");
+   wp_enqueue_script( 'jquery_cookie', get_template_directory_uri() . "/js/jquery_cookie.js");
    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . "/js/bootstrap.min.js");
    wp_enqueue_script( 'custom', get_template_directory_uri() . "/js/custom.js");
 }
